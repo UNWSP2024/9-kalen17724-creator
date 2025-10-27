@@ -13,6 +13,26 @@ def sum_numbers_from_file():
     # Add your code here #
     ######################
     print('In the sum_numbers_from_file function')
+    try:
+        #list to hold the numbers
+        numbers = []
+        #opening the file of numbers
+        with open("numbers.txt", "r") as file:
+            for line in file:
+                #transferring the numbers in an integar
+                numbers.append(int(line.strip()))
+                #Finding the sum of the number
+                total = sum(numbers)
+        print('The sum of the numbers is: ',total)
+
+
+    #Handling any IOError 
+    except IOError as e:
+        print("An error has occurred while accessing the file:", e)
+    #Handling any ValueError
+    except ValueError as v:
+        print("An error occured while reading the file:", v)    
+
 
 # You don't need to change anything below this line:
 if __name__ == '__main__':

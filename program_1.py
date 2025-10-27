@@ -13,4 +13,12 @@ def count_file_lines():
 
 # You don't need to change anything below this line:
 if __name__ == '__main__':
-    count_file_lines()
+    count_file_lines()def count_number_of_names():
+    count = 0
+    with open("names.txt", "r") as file:
+        for line in file: 
+            count += 1 
+    print("There are a total of", count,"names")
+    return count
+
+count_number_of_names()    
